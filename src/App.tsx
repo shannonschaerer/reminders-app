@@ -1,14 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
 
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import ReminderList from "./components/ReminderList";
+import Reminder from "./models/Reminder";
+
+const reminders: Reminder[] = [
+
+];
 
 function App() {
+  const [reminders, setReminders] = useState<Reminder[]>([
+    { id: 1, title: "Create todo list" },
+  ]);
   return (
 
     <div className="App">
-      <Button>This is a button!</Button>
+      <ReminderList items={reminders} />
     </div>
 
   );
